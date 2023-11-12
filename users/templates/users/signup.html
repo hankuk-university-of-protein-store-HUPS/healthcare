@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div>
+        <h1>Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div>
+                <label for="id_username">Username:</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div>
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div>
+                <label for="id_password1">Password:</label>
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div>
+                <label for="id_password2">Confirm password:</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            <div>
+                <label for="id_phone_number">Phone number (optional):</label>
+                {{ form.phone_number }}
+                {{ form.phone_number.errors }}
+            </div>
+            <div>
+                <label for="id_address">Address (optional):</label>
+                {{ form.address }}
+                {{ form.address.errors }}
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

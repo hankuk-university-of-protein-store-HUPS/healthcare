@@ -1,0 +1,22 @@
+<!-- users/login.html 전체 코드 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <!-- 여기에 필요한 CSS 링크를 추가하세요 -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.username.label_tag }} {{ form.username }} <!-- 이메일을 사용자 이름으로 사용 -->
+            {{ form.password.label_tag }} {{ form.password }} <!-- 비밀번호 필드 -->
+            <button type="submit">로그인</button>
+        </form>
+        <p>아직 회원이 아니신가요? <a href="{% url 'signup' %}">가입하기</a></p>
+    </div>
+    <!-- 여기에 필요한 JavaScript 링크를 추가하세요 -->
+</body>
+</html>
